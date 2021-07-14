@@ -16,6 +16,8 @@ pipeline {
         }
         stage('build') {
     steps {
+       sh'virtualenv venv --distribute'
+       sh'. venv/bin/activate' 
         sh 'pip install -r requirements.txt'
         sh 'ls -l'
          sh 'python3 app.py'
