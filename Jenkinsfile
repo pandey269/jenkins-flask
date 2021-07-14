@@ -18,7 +18,7 @@ pipeline {
             steps {
             sh 'pip install flask'
         sh 'ls -l'
-        #sh 'python3 app.py'
+        
     }
 }
         stage('Test') {
