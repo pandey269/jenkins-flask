@@ -16,7 +16,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'pip install virtualenv'
+                sh 'python -m virtualenv venv'
                 createVirtualEnv 'env'
     executeIn 'env', 'pip install -r requirements.txt'
     
