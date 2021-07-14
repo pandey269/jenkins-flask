@@ -19,8 +19,6 @@ pipeline {
                 sh 'pip install virtualenv'
                 createVirtualEnv 'env'
     executeIn 'env', 'pip install -r requirements.txt'
-    executeIn 'env', './manage.py test'
-    executeIn 'env', './manage.py integration-test'
     
     virtualEnv('true')
     runCmd('pip install -r requirements.txt')
