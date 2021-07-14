@@ -16,13 +16,7 @@ pipeline {
         }
         stage('build') {
             steps {
-               if (fileExists('requirements.txt')) {
-    sh '
-    . .env/bin/activate
-    pip install -r requirements/preinstall.txt
-    '
-}
-
+               
         sh 'ls -l'
         sh 'python3 app.py'
     }
