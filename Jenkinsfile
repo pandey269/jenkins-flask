@@ -22,6 +22,7 @@ sh'pip install -r requirements.txt'
 sh'pytest
 ./app.py'
         sh 'ls -l'
+        echo"your python file"
         # sh 'python3 app.py'
     }
 }
