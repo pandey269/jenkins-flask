@@ -8,16 +8,16 @@ pipeline {
                 echo 'cleaning workspace..'
             }
         }
-        stage('clone repo') {
+        stage('check out scm') {
             steps {
-                git branch: 'main', url: 'https://github.com/pandey269/jenkins-first.git'
-                echo 'cloning..'
+              checkout([$class: 'GitSCM', branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pandey269/jenkins-flask.git']]])
+                echo 'checkout scm'
             }
         }
         stage('build') {
     steps {
         sh 'ls -l'
-         sh 'python3 mypython.py'
+         sh 'python3 app.py'
     }
 }
     }
