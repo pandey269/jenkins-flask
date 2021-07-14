@@ -16,6 +16,7 @@ pipeline {
         }
         stage('build') {
             steps {
+                sh 'pip install virtualenv'
                 createVirtualEnv 'env'
     executeIn 'env', 'pip install -r requirements.txt'
     executeIn 'env', './manage.py test'
