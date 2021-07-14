@@ -17,7 +17,6 @@ pipeline {
         stage('build') {
             steps {
         sh 'ls -l'
-        echo"your python file"
         sh 'python3 app.py'
     }
 }
