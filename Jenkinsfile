@@ -27,7 +27,7 @@ pipeline {
         stage('Test') {
             steps {
                 executeIn 'env', 'pip install -r requirements.txt'
-                executeIn 'env',sh 'python test.py'
+                executeIn 'env','python test.py'
                 sh 'python test.py'
                 echo 'Testing...'
             }
