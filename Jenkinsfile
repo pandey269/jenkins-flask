@@ -18,18 +18,16 @@ pipeline {
             steps {
                 sh 'python -m virtualenv venv'
                 createVirtualEnv 'env'
-    executeIn 'env', 'pip install -r requirements.txt'
-                echo 'executes requirements file'
-    
-    virtualEnv('true')
-    runCmd('pip install -r requirements.txt')
-     sh 'pip install flask'
-        sh 'ls -l'
+             
+                sh 'pip install flask'
+                sh 'ls -l'
         
     }
 }
         stage('Test') {
             steps {
+                executeIn 'env', 'pip install -r requirements.txt'
+                executeIn 'env',sh 'python test.py'
                 sh 'python test.py'
                 echo 'Testing...'
             }
