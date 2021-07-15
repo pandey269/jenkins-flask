@@ -17,7 +17,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python -m virtualenv venv'
-                createVirtualEnv ('env')
+                createVirtualEnv 'env'
              
                 sh 'pip install flask'
                 sh 'ls -l'
