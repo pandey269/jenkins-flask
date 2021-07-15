@@ -1,3 +1,13 @@
+def createVirtualEnv(String name) {
+    sh 'venv ${name}'
+    echo 'enviroment craeted...'
+}
+def executeIn(String environment, String script) {
+    sh "source ${environment}/bin/activate && " + script
+}
+ 
+// alternative workaround
+env.VENV_PATH = "${JENKINS_HOME}/.virtualenv/${JOB_NAME}/venv"
 pipeline {
     agent any
 
@@ -40,15 +50,6 @@ pipeline {
     }
     
 }
-def createVirtualEnv(String name) {
-    sh 'venv ${name}'
-    echo 'enviroment craeted...'
-}
- 
-def executeIn(String environment, String script) {
-    sh "source ${environment}/bin/activate && " + script
-}
- 
-// alternative workaround
-env.VENV_PATH = "${JENKINS_HOME}/.virtualenv/${JOB_NAME}/venv"
+
+
 
