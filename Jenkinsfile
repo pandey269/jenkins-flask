@@ -41,7 +41,7 @@ pipeline {
     
 }
 def createVirtualEnv(String name) {
-    sh "virtualenv ${name}"
+    sh "venv ${name}"
 }
  
 def executeIn(String environment, String script) {
