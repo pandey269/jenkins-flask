@@ -41,7 +41,7 @@ pipeline {
     
 }
 def createVirtualEnv(String name) {
-    sh "venv ${name}"
+    sh 'venv ${name}'
     echo 'enviroment craeted...'
 }
  
