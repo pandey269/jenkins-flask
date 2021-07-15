@@ -28,7 +28,7 @@ pipeline {
             steps {
                 executeIn 'env', 'pip install -r requirements.txt'
                 executeIn 'env','python test.py'
-                sh 'python test.py'
+               """ sh 'python test.py'"""
                 echo 'Testing...'
             }
         }
