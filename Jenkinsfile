@@ -1,14 +1,14 @@
-def createVirtualEnv(String name) {
+/*def createVirtualEnv(String name) {
      sh 'python -m virtualenv venv'
     sh 'venv ${name}'
     echo 'enviroment craeted...'
 }
 def executeIn(String environment, String script) {
     sh "source ${environment}/bin/activate && " + script
-}
+}*/
  
 // alternative workaround
-env.VENV_PATH = "${JENKINS_HOME}/.virtualenv/${JOB_NAME}/venv"
+//env.VENV_PATH = "${JENKINS_HOME}/.virtualenv/${JOB_NAME}/venv"
 pipeline {
     agent any
 
@@ -28,7 +28,10 @@ pipeline {
         stage('build') {
             steps {
                
-                createVirtualEnv 'env'
+               // createVirtualEnv 'env'
+                 sh 'python -m virtualenv venv'
+               sh 'venv env'
+              echo 'enviroment craeted...'
              
                 sh 'pip install flask'
                 sh 'ls -l'
