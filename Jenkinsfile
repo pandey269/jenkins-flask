@@ -1,4 +1,5 @@
 def createVirtualEnv(String name) {
+     sh 'python -m virtualenv venv'
     sh 'venv ${name}'
     echo 'enviroment craeted...'
 }
@@ -26,7 +27,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'python -m virtualenv venv'
+               
                 createVirtualEnv 'env'
              
                 sh 'pip install flask'
