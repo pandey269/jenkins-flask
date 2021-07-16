@@ -34,7 +34,7 @@ pipeline {
               echo 'enviroment craeted...'
              
                 sh 'pip install flask'
-                sh 'ls -l'
+                //sh 'ls -l'
         
     }
 }
