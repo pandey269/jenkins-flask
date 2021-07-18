@@ -33,7 +33,7 @@ pipeline {
                //  sh 'virtualenv myproject'
                  sh 'virtualenv myproject source myproject/venv/bin/activate '
                  //sh 'source virtualenv/bin/activate' 
-                 echo 'all done..'
+               //  echo 'all done..'
                 /* sh 'python -m virtualenv venv'
                sh 'venv env'
               echo 'enviroment craeted...'
