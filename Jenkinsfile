@@ -29,11 +29,10 @@ pipeline {
             steps {
                
                // createVirtualEnv 'env'
-                 virtualenv {
-            name('venv')
-            command('pip install flask')
-            clear()
-        }
+                 sh 'pip install virtualenv'
+                sh 'virtualenv venv'
+                 sh 'source venv/bin/activate' 
+                 echo 'all done..'
                 /* sh 'python -m virtualenv venv'
                sh 'venv env'
               echo 'enviroment craeted...'
