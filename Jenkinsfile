@@ -30,8 +30,8 @@ pipeline {
                
                // createVirtualEnv 'env'
                  sh 'pip install virtualenv'
-                 sh 'virtualenv myproject'
-                 sh 'source myproject/venv/bin/activate '
+               //  sh 'virtualenv myproject'
+                 sh 'virtualenv myproject source myproject/venv/bin/activate '
                  //sh 'source virtualenv/bin/activate' 
                  echo 'all done..'
                 /* sh 'python -m virtualenv venv'
