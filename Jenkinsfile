@@ -29,19 +29,24 @@ pipeline {
             steps {
                
                // createVirtualEnv 'env'
-                 sh 'python -m virtualenv venv'
+                 virtualenv {
+            name('venv')
+            command('pip install flask')
+            clear()
+        }
+                /* sh 'python -m virtualenv venv'
                sh 'venv env'
               echo 'enviroment craeted...'
              
                 sh 'pip install flask'
-                //sh 'ls -l'
+                //sh 'ls -l'*/
         
     }
 }
         stage('Test') {
             steps {
-                executeIn 'env', 'pip install -r requirements.txt'
-                executeIn 'env','python test.py'
+               // executeIn 'env', 'pip install -r requirements.txt'
+                //executeIn 'env','python test.py'
           
                 echo 'Testing...'
             }
