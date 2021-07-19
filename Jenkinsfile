@@ -29,10 +29,9 @@ pipeline {
             steps {
                
                // createVirtualEnv 'env'
-                sh ' mkdir myproject'
-                 sh 'cd myproject'
+
                  sh 'pip install virtualenv'
-                 sh 'apt-get install python3-venv'
+                 sh 'mkdir python-virtual-environments && cd python-virtual-environments'
                  sh 'python3 -m venv env'
               // sh 'source venv/bin/activate'
                //  sh 'mkvirtualenv myawesomeproject'
