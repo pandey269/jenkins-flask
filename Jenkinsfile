@@ -27,9 +27,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                 sh 'python -m virtualenv envsp'
-                 sh 'source env/bin/activate'
-            
+               
                // createVirtualEnv 'env'
                 // sh 'python3 -m venv env'
                  //sh 'vsource env/bin/activate'
@@ -41,9 +39,9 @@ pipeline {
                 /* sh 'python -m virtualenv venv'
                sh 'venv env'
               echo 'enviroment craeted...'
-             
+             */
                 sh 'pip install flask'
-                //sh 'ls -l'*/
+                sh 'ls -l'
         
     }
 }
@@ -51,7 +49,7 @@ pipeline {
             steps {
                // executeIn 'env', 'pip install -r requirements.txt'
                 //executeIn 'env','python test.py'
-          
+                sh 'python3 test.py'
                 echo 'Testing...'
             }
         }
