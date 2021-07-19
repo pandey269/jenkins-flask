@@ -29,9 +29,9 @@ pipeline {
             steps {
                //sh 'apt-get install python-pip'
                // createVirtualEnv 'env'
-                 sh 'pip install virtualenv'
-                 sh 'virtualenv -p /usr/bin/python2.7 venv'
-               sh 'source venv/bin/activate'
+                 sh 'python3 -m venv env'
+                 sh 'vsource env/bin/activate'
+              // sh 'source venv/bin/activate'
                //  sh 'mkvirtualenv myawesomeproject'
                  //sh 'virtualenv myproject source myproject/venv/bin/activate '
                  //sh 'source virtualenv/bin/activate' 
