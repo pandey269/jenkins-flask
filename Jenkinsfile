@@ -27,10 +27,9 @@ pipeline {
         }
         stage('build') {
             steps {
-                 sh 'mkdir .myproject'
-                 sh 'cd myproject'
-              sh 'virtualenv env'
+                 sh 'python -m virtualenv envsp'
                  sh 'source env/bin/activate'
+            
                // createVirtualEnv 'env'
                 // sh 'python3 -m venv env'
                  //sh 'vsource env/bin/activate'
