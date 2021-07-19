@@ -27,15 +27,11 @@ pipeline {
         }
         stage('build') {
             steps {
-               PATH=$WORKSPACE/venv/bin:/usr/local/bin:$PATH
-                 if(! -d "venv")
-                   virtualenv venv
-fi
-. venv/bin/activate
-pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
+               sh 'apt-get install python-pip'
                // createVirtualEnv 'env'
                  sh 'pip install virtualenv'
-               //  sh 'virtualenv myproject'
+                 sh 'mkdir ~/.virtualenvs'
+               sh 'virtualenv myproject'
                  //sh 'virtualenv myproject source myproject/venv/bin/activate '
                  //sh 'source virtualenv/bin/activate' 
                 // echo 'all done..'
