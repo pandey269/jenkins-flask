@@ -29,8 +29,8 @@ pipeline {
             steps {
                
                // createVirtualEnv 'env'
-                // sh 'python3 -m venv env'
-                 //sh 'vsource env/bin/activate'
+                sh 'python3 -m venv env'
+                 sh 'source env/bin/activate'
               // sh 'source venv/bin/activate'
                //  sh 'mkvirtualenv myawesomeproject'
                  //sh 'virtualenv myproject source myproject/venv/bin/activate '
@@ -40,8 +40,8 @@ pipeline {
                sh 'venv env'
               echo 'enviroment craeted...'
              */
-                sh 'pip install flask'
-                sh 'ls -l'
+               // sh 'pip install flask'
+              //  sh 'ls -l'
         
     }
 }
