@@ -27,7 +27,7 @@ pipeline {
         }
         stage('build') {
             steps {
-               //sh 'apt-get install python-pip'
+               sh 'pip install virtualenv'
                // createVirtualEnv 'env'
                  sh 'python3 -m venv env'
                  sh 'vsource env/bin/activate'
