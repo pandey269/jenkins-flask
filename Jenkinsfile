@@ -27,7 +27,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                 sh '.mkdir myproject'
+                 sh 'mkdir .myproject'
                  sh 'cd myproject'
               sh 'virtualenv env'
                  sh 'source env/bin/activate'
