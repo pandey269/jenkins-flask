@@ -27,10 +27,10 @@ pipeline {
         }
         stage('build') {
             steps {
-               sh 'pip install virtualenv'
+              sh 'virtualenv env'
                // createVirtualEnv 'env'
-                 sh 'python3 -m venv env'
-                 sh 'vsource env/bin/activate'
+                // sh 'python3 -m venv env'
+                 //sh 'vsource env/bin/activate'
               // sh 'source venv/bin/activate'
                //  sh 'mkvirtualenv myawesomeproject'
                  //sh 'virtualenv myproject source myproject/venv/bin/activate '
