@@ -27,11 +27,12 @@ pipeline {
         }
         stage('build') {
             steps {
-               sh 'apt-get install python-pip'
+               //sh 'apt-get install python-pip'
                // createVirtualEnv 'env'
-                 sh 'pip install virtualenv'
-                 sh 'mkdir ~/.virtualenvs'
-               sh 'virtualenv myproject'
+                 sh 'pip install virtualenvwrapper'
+                 sh 'export WORKON_HOME=~/.virtualenvs'
+               sh '. /usr/local/bin/virtualenvwrapper.sh'
+                 sh 'mkvirtualenv myawesomeproject'
                  //sh 'virtualenv myproject source myproject/venv/bin/activate '
                  //sh 'source virtualenv/bin/activate' 
                 // echo 'all done..'
