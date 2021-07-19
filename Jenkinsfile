@@ -29,9 +29,7 @@ pipeline {
             steps {
                
                // createVirtualEnv 'env'
-                 sh'sudo apt-get install python3-venv'
-                sh 'python3 -m venv env'
-                 sh 'source env/bin/activate'
+                sh ' mkdir myproject'
               // sh 'source venv/bin/activate'
                //  sh 'mkvirtualenv myawesomeproject'
                  //sh 'virtualenv myproject source myproject/venv/bin/activate '
