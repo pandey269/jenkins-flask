@@ -31,6 +31,7 @@ pipeline {
                // createVirtualEnv 'env'
                 sh ' mkdir myproject'
                  sh 'cd myproject'
+                 sh 'pip install virtualenv'
                  sh 'virtualenv env'
               // sh 'source venv/bin/activate'
                //  sh 'mkvirtualenv myawesomeproject'
